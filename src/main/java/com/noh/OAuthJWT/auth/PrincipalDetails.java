@@ -1,6 +1,7 @@
 package com.noh.OAuthJWT.auth;
 
 import com.noh.OAuthJWT.model.Member;
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
@@ -9,9 +10,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 
+@Getter
 public class PrincipalDetails implements UserDetails, OAuth2User {
 
-    String ROLE_PREFIX = "ROLE_";
+    static final String ROLE_PREFIX = "ROLE_";
 
     private Member member;
     private Map<String, Object> attributes;
